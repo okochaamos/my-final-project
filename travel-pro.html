@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel Planner Pro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" media="screen and (min-width: 600px)" href="styles/travel-pro-larger.css">
+   <script src="scripts/travel-pro.js" defer></script> 
+</head>
+<body>
+  <header>
+    <h1>Travel Planner Pro</h1>
+  </header>
+
+  <section class="hero">
+    <h2>Where do you want to go?</h2>
+    <input type="text" class="search-bar" placeholder="Search for a city..." id="cityInput" />
+    <button class="button" onclick="planTrip()">Plan My Trip</button>
+  </section>
+
+  <section class="cards">
+    <div class="card">✈️ Flights</div>
+    <div class="card">🏨 Hotels</div>
+    <div class="card">📍 Attractions</div>
+  </section>
+
+  <section class="tabs">
+    <div class="tab-buttons">
+      <button onclick="showTab('itinerary')">Itinerary</button>
+      <button onclick="showTab('flights')">Flights</button>
+      <button onclick="showTab('hotels')">Hotels</button>
+      <button onclick="showTab('attractions')">Attractions</button>
+    </div>
+    <div id="itinerary" class="tab-content active">
+      <p>Day planner will go here.</p>
+    </div>
+    <div id="flights" class="tab-content">
+      <p>Flight results will go here.</p>
+    </div>
+    <div id="hotels" class="tab-content">
+      <p>Hotel results will go here.</p>
+    </div>
+    <div id="attractions" class="tab-content">
+      <p>Attractions list will go here.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>About Us| Contact | Terms</p>
+  </footer>
+
+  
+</body>
+</html>
