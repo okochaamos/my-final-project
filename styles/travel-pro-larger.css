@@ -1,66 +1,47 @@
-body {
-  margin: 0;
-  font-family: 'Open Sans', sans-serif;
-  background-color: #F4F4F4;
-  color: #222;
-}
-header, footer {
-  background-color: #0C4A6E;
-  color: white;
-  padding: 1rem;
-  text-align: center;
-}
-.hero {
-  text-align: center;
-  padding: 2rem;
-}
-.search-bar {
-  width: 80%;
-  max-width: 500px;
-  padding: 0.5rem;
-  font-size: 1rem;
-}
-.button {
-  background-color: #00BFA5;
-  color: white;
-  padding: 0.5rem 1rem;
-  border: none;
-  cursor: pointer;
-  margin-left: 0.5rem;
-}
-.cards {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  padding: 1rem;
-  flex-wrap: wrap;
-}
-.card {
-  background-color: white;
-  border-radius: 1rem;
-  padding: 1rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  width: 200px;
-  text-align: center;
-  cursor: pointer;
-}
-.tabs {
-  padding: 2rem;
-}
-.tab-content {
-  display: none;
-}
-.tab-content.active {
-  display: block;
-}
-.tab-buttons button {
-  margin: 0.2rem;
-  padding: 0.5rem 1rem;
-}
-.result-card {
-  background: #fff;
-  padding: 1rem;
-  margin: 0.5rem 0;
-  border-radius: 0.5rem;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
+
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #F4F4F4;
+      color: #222;
+    }
+    header, footer {
+      background-color: #0C4A6E;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    .hero {
+      text-align: center;
+      padding: 2rem;
+    }
+    .search-bar {
+      width: 80%;
+      max-width: 500px;
+      padding: 0.5rem;
+    }
+    .button {
+      background-color: #00BFA5;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      cursor: pointer;
+      margin-left: 0.5rem;
+    }
+    .tabs {
+      padding: 1rem;
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .result-card {
+      background: #fff;
+      padding: 1rem;
+      margin: 0.5rem 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+  

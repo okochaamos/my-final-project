@@ -6,8 +6,8 @@
   <title>Travel Planner Pro</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/normalize.css">
-  <link rel="stylesheet" href="styles/travel-pro.css">
-  <script src="scripts/travel-pro.js" defer></script> 
+  <link type="text/css" rel="stylesheet" media="screen and (min-width: 600px)" href="styles/travel-pro-larger.css">
+  <script src="scripts/travel-pro.js" defer></script>
 </head>
 <body>
   <header>
@@ -17,50 +17,27 @@
   <section class="hero">
     <h2>Where do you want to go?</h2>
     <input type="text" class="search-bar" id="cityInput" placeholder="Search for a city..." list="citySuggestions" />
-    <datalist id="citySuggestions"></datalist>  
-    <button class="button" onclick="planTrip()">Plan My Trip</button>
-  </section>
-
-  <section class="cards">
-    <div class="card">✈️ Flights</div>
-    <div class="card">🏨 Hotels</div>
-    <div class="card">📍 Attractions</div>
+    <datalist id="citySuggestions"></datalist>
+    <button id="planButton" class="button">Plan My Trip</button>
   </section>
 
   <section class="tabs">
-    <div class="tab-buttons">
-      <button onclick="showTab('itinerary')">Itinerary</button>
-      <button onclick="showTab('flights')">Flights</button>
-      <button onclick="showTab('hotels')">Hotels</button>
-      <button onclick="showTab('attractions')">Attractions</button>
-    </div>
-    <div id="itinerary" class="tab-content active">
-      <p>Day planner will go here.</p>
-    </div>
+    <button onclick="showTab('flights')">Flights</button>
+    <button onclick="showTab('hotels')">Hotels</button>
+
     <div id="flights" class="tab-content">
-      <p>Flight results will go here.</p>
+      <h3>Flights</h3>
+      <div id="flightResults"></div>
     </div>
     <div id="hotels" class="tab-content">
-      <p>Hotel results will go here.</p>
+      <h3>Hotels</h3>
+      <div id="hotelResults"></div>
     </div>
-    <div id="attractions" class="tab-content">
-      <p>Attractions list will go here.</p>
-    </div>
-    <div id="flights" class="tab-content">
-  <h3>Flight Results</h3>
-  <div id="flightResults"></div>
-</div>
-
-<div id="hotels" class="tab-content">
-  <h3>Hotel Results</h3>
-  <div id="hotelResults"></div>
-</div>
-
   </section>
 
-
   <footer>
-    <p>About Us | Contact | Terms</p>
+    <p>About | Contact | Terms</p>
   </footer>
+
 </body>
 </html>
