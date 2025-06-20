@@ -66,7 +66,6 @@ async function planTrip() {
     return;
   }
 
-  // Save city to local storage
   localStorage.setItem('lastCity', city);
 
   const token = await getAmadeusToken();
@@ -132,3 +131,48 @@ async function searchHotels(token, cityCode) {
 
   showTab('hotels');
 }
+
+document.getElementById('travelForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert('Thank you for your booking, ' + document.getElementById('fullName').value + '!');
+      
+  });
+
+  document.getElementById('travelForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const formData = {
+        fullName: document.getElementById('fullName').value,
+        email: document.getElementById('email').value,
+        destination: document.getElementById('destination').value,
+        departureDate: document.getElementById('departureDate').value,
+        returnDate: document.getElementById('returnDate').value,
+        numTravelers: document.getElementById('numTravelers').value,
+        notes: document.getElementById('notes').value
+      };
+
+      localStorage.setItem('lastBooking', JSON.stringify(formData));
+
+ 
+      document.getElementById('confirmation').textContent = `Thank you ${formData.fullName}, your booking for ${formData.destination} has been saved!`;
+
+      document.getElementById('travelForm').reset();
+
+     
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const saved = localStorage.getItem('lastBooking');
+      if (saved) {
+        const data = JSON.parse(saved);
+        document.getElementById('fullName').value = data.fullName || "";
+        document.getElementById('email').value = data.email || "";
+        document.getElementById('destination').value = data.destination || "";
+        document.getElementById('departureDate').value = data.departureDate || "";
+        document.getElementById('returnDate').value = data.returnDate || "";
+        document.getElementById('numTravelers').value = data.numTravelers || "";
+        document.getElementById('notes').value = data.notes || "";
+      }
+    });
+  
+
