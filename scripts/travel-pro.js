@@ -5,6 +5,13 @@ document.getElementById('cityInput').addEventListener('input', (e) => {
   if (query.length >= 3) fetchCitySuggestions(query);
 });
 
+window.addEventListener('DOMContentLoaded', () => {
+  const savedCity = localStorage.getItem('lastCity');
+  if (savedCity) {
+    document.getElementById('cityInput').value = savedCity;
+  }
+});
+
 function showTab(tabId) {
   document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
   document.getElementById(tabId).classList.add('active');
@@ -41,7 +48,7 @@ async function getAmadeusToken() {
     body: new URLSearchParams({
       grant_type: "client_credentials",
       client_id: "ZYmBIBuFjs9kG4EssXhC0JozTOUwXF4v",
-      client_secret: "0dzknXiNDBsww4tR" 
+      client_secret: "0dzknXiNDBsww4tR"
     })
   });
   if (!response.ok) {
@@ -59,11 +66,14 @@ async function planTrip() {
     return;
   }
 
+  // Save city to local storage
+  localStorage.setItem('lastCity', city);
+
   const token = await getAmadeusToken();
   if (token) {
     const origin = "LOS";  
     const destination = "ABV"; 
-    const departureDate = "2025-07-01"; 
+    const departureDate = "2025-07-01";
 
     await searchFlights(token, origin, destination, departureDate);
     await searchHotels(token, destination);
