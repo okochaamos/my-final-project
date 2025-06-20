@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Travel Planner Pro</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet">
-  <link type="text/css" rel="stylesheet" media="screen and (min-width: 600px)" href="styles/travel-pro-larger.css">
-   <script src="scripts/travel-pro.js" defer></script> 
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/travel-pro.css">
+  <script src="scripts/travel-pro.js" defer></script> 
 </head>
 <body>
   <header>
@@ -15,7 +16,8 @@
 
   <section class="hero">
     <h2>Where do you want to go?</h2>
-    <input type="text" class="search-bar" placeholder="Search for a city..." id="cityInput" />
+    <input type="text" class="search-bar" id="cityInput" placeholder="Search for a city..." list="citySuggestions" />
+    <datalist id="citySuggestions"></datalist>  
     <button class="button" onclick="planTrip()">Plan My Trip</button>
   </section>
 
@@ -47,9 +49,7 @@
   </section>
 
   <footer>
-    <p>About Us| Contact | Terms</p>
+    <p>About Us | Contact | Terms</p>
   </footer>
-
-  
 </body>
 </html>
