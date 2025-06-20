@@ -57,3 +57,10 @@ header, footer {
   margin: 0.2rem;
   padding: 0.5rem 1rem;
 }
+.result-card {
+  background: #fff;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}

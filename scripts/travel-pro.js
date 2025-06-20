@@ -94,3 +94,70 @@ async function searchHotels(token, cityCode) {
   console.log("Hotels: ", data);
   alert(`Found ${data.data ? data.data.length : 0} hotel offers!`);
 }
+async function searchFlights(token, origin, destination, departureDate) {
+  const url = `https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode=${origin}&destinationLocationCode=${destination}&departureDate=${departureDate}&adults=1`;
+
+  const response = await fetch(url, {
+    headers: { Authorization: `Bearer ${token}` }
+  });
+
+  const data = await response.json();
+  console.log("Flights: ", data);
+
+  const flightContainer = document.getElementById("flightResults");
+  flightContainer.innerHTML = "";
+
+  if (data.data && data.data.length > 0) {
+    data.data.forEach(offer => {
+      const price = offer.price.total;
+      const segments = offer.itineraries[0].segments;
+      const from = segments[0].departure.iataCode;
+      const to = segments[segments.length - 1].arrival.iataCode;
+
+      const div = document.createElement("div");
+      div.className = "result-card";
+      div.innerHTML = `
+        <strong>${from} ➡️ ${to}</strong><br/>
+        Price: $${price}
+      `;
+      flightContainer.appendChild(div);
+    });
+  } else {
+    flightContainer.innerHTML = "<p>No flight offers found.</p>";
+  }
+
+  showTab('flights');
+}
+
+async function searchHotels(token, cityCode) {
+  const url = `https://test.api.amadeus.com/v2/shopping/hotel-offers?cityCode=${cityCode}`;
+
+  const response = await fetch(url, {
+    headers: { Authorization: `Bearer ${token}` }
+  });
+
+  const data = await response.json();
+  console.log("Hotels: ", data);
+
+  const hotelContainer = document.getElementById("hotelResults");
+  hotelContainer.innerHTML = "";
+
+  if (data.data && data.data.length > 0) {
+    data.data.forEach(offer => {
+      const name = offer.hotel.name;
+      const price = offer.offers[0].price.total;
+
+      const div = document.createElement("div");
+      div.className = "result-card";
+      div.innerHTML = `
+        <strong>${name}</strong><br/>
+        Price per stay: $${price}
+      `;
+      hotelContainer.appendChild(div);
+    });
+  } else {
+    hotelContainer.innerHTML = "<p>No hotel offers found.</p>";
+  }
+
+  showTab('hotels');
+}
