@@ -1,96 +1,147 @@
 
-    body {
-      margin: 0;
-      font-family: 'Open Sans', sans-serif;
-      background-color: #F4F4F4;
-      color: #222;
-    }
-    header, footer {
-      background-color: #0C4A6E;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
-    .hero {
-      text-align: center;
-      padding: 2rem;
-    }
-    .search-bar {
-      width: 80%;
-      max-width: 500px;
-      padding: 0.5rem;
-    }
-    .button {
-      background-color: #00BFA5;
-      color: white;
-      padding: 0.5rem 1rem;
-      border: none;
-      cursor: pointer;
-      margin-left: 0.5rem;
-    }
-    .tabs {
-      padding: 1rem;
-    }
-    .tab-content {
-      display: none;
-    }
-    .tab-content.active {
-      display: block;
-    }
-    .result-card {
-      background: #fff;
-      padding: 1rem;
-      margin: 0.5rem 0;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-  
- body {
-      font-family: 'Open Sans', sans-serif;
-      background-color: #f4f4f4;
-      padding: 2rem;
-      color: #333;
-    }
-    form {
-      background: #fff;
-      padding: 1.5rem;
-      border-radius: 8px;
-      max-width: 500px;
-      margin: auto;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    h2 {
-      text-align: center;
-      color: #0c4a6e;
-    }
-    label {
-      display: block;
-      margin-top: 1rem;
-      font-weight: bold;
-    }
-    input, select, textarea {
-      width: 100%;
-      padding: 0.5rem;
-      margin-top: 0.3rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    button {
-      background-color: #00bfa5;
-      color: #fff;
-      padding: 0.7rem;
-      border: none;
-      border-radius: 4px;
-      width: 100%;
-      margin-top: 1.5rem;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-    button:hover {
-      background-color: #009e8b;
-    }
-  .my-link {list-style: none; 
-    padding: 0; 
-    display: flex; 
-    justify-content: center; 
-    gap: 1rem;}
+body {
+  margin: 0;
+  padding: 2rem;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+h1, h2, h3 {
+  color: #0C4A6E;
+  margin-bottom: 0.5rem;
+}
+
+header, footer {
+  background-color: #0C4A6E;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+
+nav ul.my-link {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0.5rem 0 0 0;
+}
+
+nav ul.my-link li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav ul.my-link li a:hover {
+  text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 2rem;
+}
+
+.search-bar {
+  width: 80%;
+  max-width: 500px;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.button {
+  background-color: #00BFA5;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 0.5rem;
+}
+
+.button:hover {
+  background-color: #009e8b;
+}
+
+/* Tabs */
+.tabs {
+  padding: 1rem;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.result-card {
+  background: #fff;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+
+form {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  max-width: 500px;
+  margin: 2rem auto;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+form button {
+  background-color: #00BFA5;
+  color: #fff;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 4px;
+  width: 100%;
+  margin-top: 1.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+form button:hover {
+  background-color: #009e8b;
+}
+
+
+.terms-container {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 800px;
+  margin: 2rem auto;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.terms-container p, .terms-container li {
+  line-height: 1.6;
+}
+
