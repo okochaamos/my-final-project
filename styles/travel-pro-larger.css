@@ -89,4 +89,8 @@
     button:hover {
       background-color: #009e8b;
     }
- 
+  .my-link {list-style: none; 
+    padding: 0; 
+    display: flex; 
+    justify-content: center; 
+    gap: 1rem;}
