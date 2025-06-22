@@ -1,4 +1,4 @@
- body {
+    body {
       margin: 0;
       padding: 2rem;
       font-family: 'Open Sans', sans-serif;
@@ -9,6 +9,10 @@
     h1, h2, h3 {
       color: #0C4A6E;
       margin-bottom: 0.5rem;
+    }
+
+    header h1 {
+      color: #fff;
     }
 
     header, footer {
